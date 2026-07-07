@@ -249,9 +249,10 @@ section { padding: 56px 0; }
 }
 
 .about-text {
-  max-width: 68ch;
+  max-width: 100ch;
   color: var(--ink);
   font-size: 16px;
+  text-align: justify;
 }
 
 /* ---------------------------------- skills --------------------------------- */
