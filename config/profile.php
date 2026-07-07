@@ -13,7 +13,7 @@ return [
     'tagline'     => 'Passionate About Delivering Quality Software.',
 
     'about'       => "Detail-oriented and results-driven
-Quality Assurance Tester with 1 year of
+Quality Assurance Tester with a year of
 experience in software testing, quality
 assurance processes, and defect
 management. Skilled in creating and
