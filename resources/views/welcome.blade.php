@@ -38,6 +38,7 @@
         <nav>
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
             <a href="#connect">Contact</a>
         </nav>
     </div>
@@ -118,9 +119,32 @@
     </div>
 </section>
 
+<section id="experience">
+    <div class="wrap">
+        <p class="section-label">03 — Service Record</p>
+        <h2 class="section-title">Work Experience</h2>
+
+        <div class="timeline">
+            @foreach($profile['experience'] as $job)
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <p class="timeline-dates">
+                            {{ $job['start'] }} &ndash; {{ $job['current'] ? 'Present' : $job['end'] }}
+                        </p>
+                        <h3 class="timeline-role">{{ $job['role'] }}</h3>
+                        <p class="timeline-company">{{ $job['company'] }}</p>
+                        <p class="timeline-summary">{{ $job['summary'] }}</p>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+
 <section id="socials">
     <div class="wrap">
-        <p class="section-label">03 — Find me online</p>
+        <p class="section-label">04 — Find me online</p>
         <h2 class="section-title">Social</h2>
 
         <div class="social-row">
@@ -148,7 +172,7 @@
 
 <section id="connect">
     <div class="wrap">
-        <p class="section-label">04 — Get in touch</p>
+        <p class="section-label">05 — Get in touch</p>
         <h2 class="section-title">Contact me</h2>
 
         <div class="intake">

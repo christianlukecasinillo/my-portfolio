@@ -256,13 +256,13 @@ section { padding: 56px 0; }
 }
 
 /* ---------------------------------- skills --------------------------------- */
-
+ 
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 18px;
 }
-
+ 
 .skill-card {
   background: #fff;
   border: 1px solid var(--paper-line);
@@ -270,21 +270,27 @@ section { padding: 56px 0; }
   padding: 18px 20px;
   opacity: 0;
   transform: translateY(14px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
-
+ 
 .skill-card.in-view {
   opacity: 1;
   transform: translateY(0);
 }
-
+ 
+.skill-card:hover {
+  transform: scale(1.03);
+  border-color: var(--stamp);
+  box-shadow: 0 12px 24px -12px rgba(23, 26, 33, 0.2);
+}
+ 
 .skill-card__head {
   display: flex;
   align-items: center;
   gap: 12px;
   margin-bottom: 14px;
 }
-
+ 
 .skill-icon {
   width: 40px;
   height: 40px;
@@ -295,11 +301,11 @@ section { padding: 56px 0; }
   justify-content: center;
   flex-shrink: 0;
 }
-
+ 
 .skill-icon svg { width: 22px; height: 22px; stroke: #fff; fill: none; }
-
+ 
 .skill-card__name { font-weight: 700; font-size: 15px; }
-
+ 
 .skill-meter {
   height: 8px;
   background: var(--paper-soft);
@@ -307,7 +313,7 @@ section { padding: 56px 0; }
   overflow: hidden;
   position: relative;
 }
-
+ 
 .skill-meter__fill {
   height: 100%;
   width: 0%;
@@ -315,15 +321,84 @@ section { padding: 56px 0; }
   border-radius: 999px;
   transition: width 1.1s cubic-bezier(.22,.61,.36,1);
 }
-
+ 
 .skill-card.in-view .skill-meter__fill { width: var(--level); }
-
+ 
 .skill-card__level {
   font-family: var(--font-mono);
   font-size: 12px;
   color: var(--muted);
   margin-top: 6px;
   text-align: right;
+}
+
+/* ---------------------------------- experience timeline --------------------------------- */
+ 
+.timeline {
+  position: relative;
+  padding-left: 28px;
+  border-left: 2px dashed var(--paper-line);
+}
+ 
+.timeline-item {
+  position: relative;
+  padding-bottom: 32px;
+}
+ 
+.timeline-item:last-child { padding-bottom: 0; }
+ 
+.timeline-dot {
+  position: absolute;
+  left: -34px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--stamp);
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px var(--stamp);
+}
+ 
+.timeline-content {
+  background: #fff;
+  border: 1px solid var(--paper-line);
+  border-radius: var(--radius);
+  padding: 18px 22px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+ 
+.timeline-content:hover {
+  transform: scale(1.03);
+  border-color: var(--stamp);
+  box-shadow: 0 12px 24px -12px rgba(23, 26, 33, 0.2);
+}
+ 
+.timeline-dates {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 6px;
+}
+ 
+.timeline-role {
+  font-family: var(--font-display);
+  font-size: 19px;
+  margin: 0 0 2px;
+}
+ 
+.timeline-company {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--stamp-dark);
+  margin: 0 0 10px;
+}
+ 
+.timeline-summary {
+  font-size: 14.5px;
+  color: var(--ink);
+  margin: 0;
 }
 
 /* ---------------------------------- socials --------------------------------- */
