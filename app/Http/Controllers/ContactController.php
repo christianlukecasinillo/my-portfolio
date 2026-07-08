@@ -30,7 +30,7 @@ class ContactController extends Controller
             'name'    => ['required', 'string', 'max:255'],
             'email'   => ['required', 'email', 'max:255'],
             'company' => ['nullable', 'string', 'max:255'],
-            'phone'   => ['nullable', 'regex:/^[0-9]+$/', 'max:15'],
+            'phone'   => ['nullable', 'regex:/^[0-9]+$/', 'max:11'],
             'reason'  => ['required', 'string', 'max:2000'],
         ]);
 
