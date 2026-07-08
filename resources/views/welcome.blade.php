@@ -178,7 +178,16 @@
                     </div>
                     <div class="field">
                         <label for="phone">Phone (optional)</label>
-                        <input type="text" id="phone" name="phone" value="{{ old('phone') }}">
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            inputmode="numeric"
+                            pattern="[0-9]*"
+                            maxlength="15"
+                            value="{{ old('phone') }}"
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                        >
                         @error('phone') <div class="field-error">{{ $message }}</div> @enderror
                     </div>
                     <div class="field full">
