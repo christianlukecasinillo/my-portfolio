@@ -39,6 +39,7 @@
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
             <a href="#experience">Experience</a>
+            <a href="#activities">Activities</a>
             <a href="#connect">Contact</a>
         </nav>
     </div>
@@ -65,6 +66,15 @@
                 <h1 class="id-card__name">{{ $profile['name'] }}</h1>
                 <p class="id-card__title">{{ $profile['title'] }}</p>
                 <p class="id-card__tagline">{{ $profile['tagline'] }}</p>
+
+                @if(!empty($profile['resume']) && file_exists(public_path($profile['resume'])))
+                    <a href="{{ asset($profile['resume']) }}" download class="cv-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/>
+                        </svg>
+                        Download CV
+                    </a>
+                @endif
 
                 <dl class="id-card__fields">
                     <div>
@@ -142,9 +152,36 @@
     </div>
 </section>
 
+<section id="activities">
+    <div class="wrap">
+        <p class="section-label">04 — Beyond the Desk</p>
+        <h2 class="section-title">Extra-Curricular Activities</h2>
+
+        <div class="activities-grid">
+            @foreach($profile['activities'] as $activity)
+                <div class="activity-card">
+                    <div class="activity-photo">
+                        @if(!empty($activity['photo']))
+                            <img src="{{ asset('images/activities/'.$activity['photo']) }}" alt="{{ $activity['name'] }}">
+                        @else
+                            <span>{{ $activity['tag'] }}</span>
+                        @endif
+                    </div>
+                    <div class="activity-body">
+                        <p class="activity-tag">{{ $activity['tag'] }}</p>
+                        <h3 class="activity-name">{{ $activity['name'] }}</h3>
+                        <p class="activity-summary">{{ $activity['summary'] }}</p>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+
+
 <section id="socials">
     <div class="wrap">
-        <p class="section-label">04 — Find me online</p>
+            <p class="section-label">05 — Find me online</p>
         <h2 class="section-title">Social</h2>
 
         <div class="social-row">
@@ -172,7 +209,7 @@
 
 <section id="connect">
     <div class="wrap">
-        <p class="section-label">05 — Get in touch</p>
+        <p class="section-label">06 — Get in touch</p>
         <h2 class="section-title">Contact me</h2>
 
         <div class="intake">

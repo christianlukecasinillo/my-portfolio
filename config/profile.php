@@ -39,6 +39,8 @@ s
 quality assurance team.",
 
     'photo'       => 'photo.jpg', // e.g. 'profile.jpg' placed in public/images/ — leave null to show initials instead
+    // Place your PDF at public/resume.pdf (or change this filename) to enable the Download CV button.
+    'resume'      => 'resume.pdf',
 
     'contact' => [
         'number'  => '+63 916 567 9714',
@@ -90,6 +92,27 @@ quality assurance team.",
                         identified and documented defects using JIRA, 
                         collaborated with developers to resolve issues, 
                         and performed basic automation testing with Playwright to ensure software quality.',
+        ],
+    ],
+     // Photos go in public/images/activities/ — reference just the filename below.
+    'activities' => [
+        [
+            'tag'     => 'Sports',
+            'name'    => 'UCLM Indoor Volleyball Varsity Team - Player',
+            'summary' => 'Represented the school in intercollegiate competetion (CESAFI 2022)',
+            'photo'   => '2022.jpg', // e.g. 'cleanup.jpg'
+        ],
+        [
+            'tag'     => 'Sports',
+            'name'    => 'UCLM Beach Volleyball Varsity Team - Player',
+            'summary' => 'Represented the school in intercollegiate competetion (CESAFI Beach Volleyball 2023)',
+            'photo'   => '2023.png',
+        ],
+        [
+            'tag'     => 'Sports',
+            'name'    => 'Central Visayas Regional Athletics Association (CVIRAA-2017)',
+            'summary' => 'Represented the school/city Secondary Division/HighSchool in Regional competition (TOP 4).',
+            'photo'   => 'cviraa.jpg',
         ],
     ],
 ];
