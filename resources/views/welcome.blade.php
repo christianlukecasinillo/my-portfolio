@@ -23,6 +23,7 @@
         'database' => '<path d="M12 5c4.4 0 8 1.1 8 2.5S16.4 10 12 10s-8-1.1-8-2.5S7.6 5 12 5Z"/><path d="M4 7.5V17c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5V7.5"/><path d="M4 12c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5"/>',
         'brush'    => '<path d="M4 20c0-3 2-4 4-4 1.5 0 2 1 3 1 2 0 2-3 2-5 0-3 2-8 6-9-1 4-1 8 1 9 1 .5 1.5 2 0 3-2 2-4 1-6 1-1 0-3 .5-3 2 0 1-1 2-3 2s-4-1-4 0Z"/>',
         'branch'   => '<circle cx="6" cy="6" r="2"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="9" r="2"/><path d="M6 8v8M6 8c0 4 4 3 8 3"/>',
+        'shield'   => '<path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4Z"/><path d="M9 12l2 2 4-4"/>',
     ];
 
     $socialIcons = [
@@ -109,21 +110,57 @@
         <h2 class="section-title">Skills</h2>
 
         <div class="skills-grid">
-            @foreach($profile['skills'] as $skill)
-                <div class="skill-card" style="--level: {{ $skill['level'] }}%;">
-                    <div class="skill-card__head">
-                        <div class="skill-icon">
-                            <svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                                {!! $icons[$skill['icon']] ?? $icons['code'] !!}
+            @foreach($profile['skills'] as $index => $skill)
+                @if(!empty($skill['tools']))
+                    <div class="skill-card skill-card--expandable" style="--level: {{ $skill['level'] }}%;" onclick="this.classList.toggle('skill-open')">
+                        <div class="skill-card__head">
+                            <div class="skill-card__head-left">
+                                <div class="skill-icon">
+                                    <svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                        {!! $icons[$skill['icon']] ?? $icons['code'] !!}
+                                    </svg>
+                                </div>
+                                <div class="skill-card__name">{{ $skill['name'] }}</div>
+                            </div>
+                            <svg class="skill-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M6 9l6 6 6-6"/>
                             </svg>
                         </div>
-                        <div class="skill-card__name">{{ $skill['name'] }}</div>
+                        <div class="skill-meter">
+                            <div class="skill-meter__fill"></div>
+                        </div>
+                        <div class="skill-card__level">{{ $skill['level'] }}%</div>
+
+                        <div class="skill-sublist">
+                            @foreach($skill['tools'] as $tool)
+                                <div class="skill-subitem">
+                                    <div class="skill-subitem__left">
+                                        <span class="skill-subdot"></span>
+                                        <span class="skill-subname">{{ $tool['name'] }}</span>
+                                    </div>
+                                    <div class="skill-submeter">
+                                        <div class="skill-submeter__fill" style="width: {{ $tool['level'] }}%;"></div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
                     </div>
-                    <div class="skill-meter">
-                        <div class="skill-meter__fill"></div>
+                @else
+                    <div class="skill-card" style="--level: {{ $skill['level'] }}%;">
+                        <div class="skill-card__head">
+                            <div class="skill-icon">
+                                <svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                    {!! $icons[$skill['icon']] ?? $icons['code'] !!}
+                                </svg>
+                            </div>
+                            <div class="skill-card__name">{{ $skill['name'] }}</div>
+                        </div>
+                        <div class="skill-meter">
+                            <div class="skill-meter__fill"></div>
+                        </div>
+                        <div class="skill-card__level">{{ $skill['level'] }}%</div>
                     </div>
-                    <div class="skill-card__level">{{ $skill['level'] }}%</div>
-                </div>
+                @endif
             @endforeach
         </div>
     </div>

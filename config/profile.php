@@ -40,7 +40,7 @@ quality assurance team.",
 
     'photo'       => 'photo.jpg', // e.g. 'profile.jpg' placed in public/images/ — leave null to show initials instead
     // Place your PDF at public/resume.pdf (or change this filename) to enable the Download CV button.
-    'resume'      => 'resume.pdf',
+    'resume'      => 'CasinilloResume.pdf',
 
     'contact' => [
         'number'  => '+63 916 567 9714',
@@ -59,16 +59,81 @@ quality assurance team.",
 
     // icon key must match one defined in resources/views/welcome.blade.php's $icons array
     'skills' => [
-        ['name' => 'Playwright', 'level' => 70, 'icon' => 'code'],
-        ['name' => 'Selenium',    'level' => 60, 'icon' => 'code'],
-        ['name' => 'Postman',   'level' => 75, 'icon' => 'code'],
-        ['name' => 'C#',         'level' => 75, 'icon' => 'code'],
-        ['name' => 'ReactJS',  'level' => 85, 'icon' => 'code'],
-        ['name' => 'HTML',  'level' => 80, 'icon' => 'code'],
-        ['name' => 'CSS',  'level' => 80, 'icon' => 'code'],
-        ['name' => 'PHP',  'level' => 75, 'icon' => 'code'],
-        ['name' => 'Google Workspace Proficeincy',  'level' => 95, 'icon' => 'server'],
-        ['name' => 'Microsoft Workspace Proficiency',  'level' => 90, 'icon' => 'server'],
+        
+        [
+            'name'  => 'Testing Tools',
+            'level' => 80,
+            'icon'  => 'shield',
+            'tools' => [
+                ['name' => 'Playwright', 'level' => 80],
+                ['name' => 'Selenium',   'level' => 75],
+                ['name' => 'Postman',    'level' => 85],
+            ],
+        ],
+        [
+            'name'  => 'Google Workspace Proficiency',
+            'level' => 95,
+            'icon'  => 'shield',
+            'tools' => [
+                ['name' => 'Spreadsheet', 'level' => 97],
+                ['name' => 'Docx',   'level' => 90],
+            ],
+        ],
+        [
+            'name'  => 'Programming (Basic)',
+            'level' => 85,
+            'icon'  => 'shield',
+            'tools' => [
+                ['name' => 'PHP', 'level' => 75],
+                ['name' => 'C#',   'level' => 75],
+                ['name' => 'ReactJS',   'level' => 85],
+                ['name' => 'HTML',   'level' => 80],
+                ['name' => 'CSS',   'level' => 80],
+                ['name' => 'Javascript',   'level' => 80],
+            ],
+        ],
+        [
+            'name'  => 'Database',
+            'level' => 86,
+            'icon'  => 'shield',
+            'tools' => [
+                ['name' => 'PHPMyAdmin', 'level' => 87],
+                ['name' => 'MySQL', 'level' => 85],
+            ],
+        ],
+        [
+            'name'  => 'Defect Tracking & Management',
+            'level' => 90,
+            'icon'  => 'shield',
+            'tools' => [
+                ['name' => 'JIRA', 'level' => 90],
+            ],
+        ],
+        [
+            'name'  => 'AI & Productivity Tools',
+            'level' => 90,
+            'icon'  => 'shield',
+            'tools' => [
+                ['name' => 'Gemini', 'level' => 90],
+                ['name' => 'ChatGPT', 'level' => 90],
+                ['name' => 'ClaudeAI', 'level' => 90],
+                ['name' => 'Cline', 'level' => 80],
+                ['name' => 'Git', 'level' => 80],
+                ['name' => 'Github', 'level' => 90],
+            ],
+        ],
+        [
+            'name'  => 'Testing Methodologies',
+            'level' => 88,
+            'icon'  => 'shield',
+            'tools' => [
+                ['name' => 'Functional Testing', 'level' => 88],
+                ['name' => 'Regression Testing', 'level' => 89],
+                ['name' => 'Integration Testing', 'level' => 88],
+                ['name' => 'Exploratory Testing', 'level' => 95],
+                ['name' => 'User Acceptance Testing', 'level' => 80],
+            ],
+        ],
     ],
     'experience' => [
         [
@@ -111,7 +176,7 @@ quality assurance team.",
         [
             'tag'     => 'Sports',
             'name'    => 'Central Visayas Regional Athletics Association (CVIRAA-2017)',
-            'summary' => 'Represented the school/city Secondary Division/HighSchool in Regional competition (TOP 4).',
+            'summary' => 'Represented the school/city Secondary Division/HighSchool in Regional competition (TOP 4)',
             'photo'   => 'cviraa.jpg',
         ],
     ],
