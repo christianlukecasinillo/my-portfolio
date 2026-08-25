@@ -40,7 +40,7 @@ quality assurance team.",
 
     'photo'       => 'photo.jpg', // e.g. 'profile.jpg' placed in public/images/ — leave null to show initials instead
     // Place your PDF at public/resume.pdf (or change this filename) to enable the Download CV button.
-    'resume'      => 'CasinilloResume.pdf',
+    'resume'      => 'Casinillo-CV.pdf',
 
     'contact' => [
         'number'  => '+63 916 567 9714',
