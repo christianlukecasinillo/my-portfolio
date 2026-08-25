@@ -137,17 +137,6 @@ quality assurance team.",
     ],
     'experience' => [
         [
-            'role'    => 'Quality Assurance - INTERN',
-            'company' => 'Cerenimbus Inc.',
-            'start'   => 'Jan 2025',
-            'end'     => 'April 2025',
-            'current' => false,
-            'summary' => 'Developed PHP APIs, conducted software testing, 
-                        created detailed test cases, documented defects, 
-                        and collaborated with developers to improve application functionality, 
-                        user interface, and overall software quality.',
-        ],
-        [
             'role'    => 'Quality Assurance Tester',
             'company' => 'Forty Degrees Celsius Inc.',
             'start'   => 'August 2025',
@@ -158,6 +147,18 @@ quality assurance team.",
                         collaborated with developers to resolve issues, 
                         and performed basic automation testing with Playwright to ensure software quality.',
         ],
+        [
+            'role'    => 'Quality Assurance - INTERN',
+            'company' => 'Cerenimbus Inc.',
+            'start'   => 'Jan 2025',
+            'end'     => 'April 2025',
+            'current' => false,
+            'summary' => 'Developed PHP APIs, conducted software testing, 
+                        created detailed test cases, documented defects, 
+                        and collaborated with developers to improve application functionality, 
+                        user interface, and overall software quality.',
+        ],
+        
     ],
      // Photos go in public/images/activities/ — reference just the filename below.
     'activities' => [
